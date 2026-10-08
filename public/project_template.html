@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <title>Project</title>
+        <link rel="icon" type="image/x-icon" href="./img/favicon.ico">  
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script> 
+        <script>
+                const db_url = "https://auzvkehyopulynslbrcr.supabase.co"
+                const db_publickey = "sb_publishable_YJCDyq9ajV0SMlrnKpY9Qg_HkOt_STN"
+                const db = window.supabase.createClient(db_url, db_publickey)
+        </script>  
+    </head>
+
+    <body>
+        
+         <nav class="navbar">  
+            <a class="navbartitle" href="index.html#landing">Professional</a>
+
+            <ul>
+                <a href="index.html#projects">projects</a>
+                <a href="index.html#about">about</a>
+                 <a href="index.html#info">info</a>
+             </ul>
+        </nav>
+
+        <div>
+            <h1 class="title" id="title">Title</h1>
+            <a class="url" id="link">No page yet :(</a>
+            <p class="description" id ="description">text text text</p>
+
+
+        </div>
+
+        <div id = "datestatusdiv" style="position: absolute; top: 90vh; left: 2.5vw;">
+            <p class="date" id="date">date: </p>
+            <p class="status" id="status">status: </p>
+        </div>
+
+        <script>
+                const observer = new IntersectionObserver((items) => {
+                    items.forEach(item => {
+                        if (item.isIntersecting){
+                            item.target.classList.remove("fade-out")
+                            item.target.classList.add("fade-in")
+                        } else {
+                            item.target.classList.remove("fade-in")
+                            item.target.classList.add("fade-out")
+                        }
+                    })
+                }, {threshold: 0.5} )
+
+                const elements = document.querySelectorAll("div")
+                elements.forEach(element =>{
+                    observer.observe(element)
+                })
+        </script>
+
+        <script>
+            const urlparamrs = new URLSearchParams(window.location.search)
+            const project = urlparamrs.get("project")
+
+            get(project)
+            
+            async function get(p) {
+                const key = `project${p}`
+                const CachedData = localStorage.getItem(`project${p}`)
+                console.log(CachedData)
+                if (CachedData != null && CachedData.length <= 0){
+                    display(JSON.parse(CachedData))
+                }
+
+                const {error, success, data} = await db.from("projects").select("*").eq("slug", p)
+                console.log(error, success, data) 
+
+                if (error != null || data.length <= 0){
+                    display(null)
+                    return
+                } 
+
+                localStorage.setItem(key, JSON.stringify(data))
+
+                display(data)
+            }
+
+            async function display(data) {
+                if (data){
+                    for (const [i, value] of Object.entries(data[0])){
+                        const foundelement = document.getElementById(i)
+
+                        if (foundelement && value != null) {
+                            
+                            if (foundelement instanceof HTMLAnchorElement){
+                                foundelement.href = value
+                                foundelement.innerText = "Game page"
+                            }else{
+                                foundelement.innerText = value
+                            }
+                        }else{
+                            continue
+                        }
+                    }
+                } else {
+                    const title = document.getElementById("title")
+                    const descriptionbox = document.getElementById("description")
+                    const linktext = document.getElementById("link")
+                    const div = document.getElementById("datestatusdiv")
+                    title.innerText = 'project not found...'
+                    descriptionbox.innerText = 'try a different project'
+
+                    div.classList.remove("fade-in")
+                    div.classList.add("invisible")
+
+                    linktext.remove()
+                }
+            }
+        </script>
+    </body>
+
+    <link rel="stylesheet" href="css/project-style.css">
+</html>

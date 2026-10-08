@@ -1,0 +1,263 @@
+<html>
+    <title>Professional</title>
+
+    <head>
+        <link rel="icon" type="image/x-icon" href="./img/favicon.ico">
+        <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+        <script>
+                const db_url = "https://auzvkehyopulynslbrcr.supabase.co"
+                const db_publickey = "sb_publishable_YJCDyq9ajV0SMlrnKpY9Qg_HkOt_STN"
+                const db = window.supabase.createClient(db_url, db_publickey)
+        </script>  
+    </head>
+
+    <body id="main_bg">
+        <div>
+            <div id = "landing" class = "titlecardbody">
+                <body>
+                    <nav class="navbar">  
+                        <a class="navbartitle" href="#landing">Professional</a>
+
+                        <ul>
+                            <a href="#projects">projects</a>
+                            <a href="#about">about</a>
+                            <a href="#info">info</a>
+                        </ul>
+                    </nav>
+
+                    <h1 class="titlecardheader">welcome</h1>
+                    <h2 class="titlecardsubheader">enjoy your stay :)</h2>
+
+                    
+                    <p class="titlecardscroller" style="font-size: 70px; font-weight: bolder;">⌄</p>
+                    <span class="titlecardscroller">scroll for more</p></span>
+                </body>
+            </div>
+
+            <div id = "projects">
+                <body style="margin: 0%;">
+                    <h1 style="font-size: 80px; margin: 0%;">Projects</h1>
+                    <h2 class="subheader" style="font-size: 40px; margin: 0%;">that im working on</h2>
+
+                    <ul class="projectlist">
+                        <div class="projectbox">
+                            <span>
+                                <h1 class="ProjectHeader">Tower Defense</h1>
+                                <h2 class="ProjectSubHeader" style="font-size: 25px; margin: 0%;">
+                                    PvZ style tower defense game <br> with pvp and ragdolls</h2>
+                            </span>
+
+                            <button class="ProjectLikeButton" data-id="project-towerdefense">like</button>
+                            <a class="ProjectButton" href="./project_template.html?project=towerdefense">project page</a>
+
+                            <p class="ProjectLikeCounter" id="count-project-towerdefense">0</p>
+                            
+                        </div>
+
+                        <div class="projectbox">
+                            <span>
+                                <h1 class="ProjectHeader">Zombie shooter</h1>
+                                <h2 class="ProjectSubHeader" style="font-size: 25px; margin: 0%;">
+                                    Zombie survival shooter with random map generation <br>multiplayer focused aspects</h2>
+                            </span>
+
+                            <button class="ProjectLikeButton" data-id="project-zombieshooter">like</button>
+                            <a class="ProjectButton" href="./project_template.html?project=zombieshooter">project page</a>
+
+                            <p class="ProjectLikeCounter" id="count-project-zombieshooter">0</p>
+                            
+                        </div>
+
+                        <div class="projectbox">
+                            <span>
+                                <h1 class="ProjectHeader">Building game</h1>
+                                <h2 class="ProjectSubHeader" style="font-size: 25px; margin: 0%;">
+                                    free-build game with destruction physics, random and pre-made maps <br> to destroy!!!</h2>
+                            </span>
+
+                            <button class="ProjectLikeButton" data-id = "project-building-game">like</button>
+                            <a class="ProjectButton" href="./project_template.html?project=buildinggame">project page</a>
+
+                            <p class="ProjectLikeCounter" id="count-project-building-game">0</p>
+                        </div>
+                    </ul>
+
+                </body>
+            </div>  
+
+            <div id = "about">
+                <body>
+                    <h1>about this website...</h1>
+                    <h2 class="subheader">and it's purpose</h2>
+
+                    <span>
+                        <p class="sectionparagraph">This website exists to simply display the projects im working on</p>
+                        <p class="sectionparagraph">and a place to showcase existing / in progress projects.</p>
+                        <br>
+                        <p class="sectionparagraph">mabye go check them out sometime :) </p>
+                        <br>
+                        <p class="sectionparagraph">most of my current projects are unfinished or under construction, </p>
+                        <p class="sectionparagraph">so check back in time to time to check out any updates</p>
+                        <br>
+                        <p class="sectionparagraph">this website is also unfinished and will have more features added to it soon. 
+                        <br>whenever soon is...</p>
+                    </span>
+                </body>
+            </div>
+
+            <div id = "info">
+                <body>
+                    <h1>More info...</h1>
+                    <h2 class="subheader">extras</h2> 
+                    <span>
+                        <p class="sectionparagraph">None of the projects on this website are finished</p>
+                        <p class="sectionparagraph">and might be deleted/archived</p>
+                        <br>
+                        <p class="sectionparagraph">Might also put some social links here at some point</p>
+                        <p class="sectionparagraph">be sure to check back...</p>
+
+                        <hr class="bottom-bar">
+
+                        <button class ="secretbgclassbutton" id="secret-button">secret</button>
+                    </span>
+                </body>
+            </div>
+
+            <script>
+                const observer = new IntersectionObserver((items) => {
+                    items.forEach(item => {
+                        if (item.isIntersecting){
+                            item.target.classList.remove("fade-out")
+                            item.target.classList.add("fade-in")
+                        } else {
+                            item.target.classList.remove("fade-in")
+                            item.target.classList.add("fade-out")
+                        }
+                    })
+                }, {threshold: 0.5} )
+
+                const projectboxobserver = new IntersectionObserver((items) => {
+                    items.forEach(item => {
+                        if (item.isIntersecting){
+                            item.target.classList.remove("fade-out-box")
+                            item.target.classList.add("fade-in-box")
+                        } else{
+                            item.target.classList.add("fade-out-box")
+                            item.target.classList.remove("fade-in-box")
+                        }
+
+                    })
+                }, {threshold: 0.05})
+
+                const elements = document.querySelectorAll("h1")
+                elements.forEach(element =>{
+                    observer.observe(element)
+                })
+                
+                const subheaders = document.querySelectorAll("h2")
+                subheaders.forEach(element =>{
+                    observer.observe(element)
+                })
+
+                const paragraphs = document.querySelectorAll(".sectionparagraph")
+                paragraphs.forEach(element =>{
+                    observer.observe(element)
+                })
+
+                const projectboxes = document.querySelectorAll(".projectbox")
+                projectboxes.forEach(element =>{
+                    projectboxobserver.observe(element)
+                })
+            </script>
+
+            <script>
+                async function onpageload(btn) {
+                    console.log(btn)
+                    const game_id = btn.getAttribute('data-id');
+
+                    if (game_id && localStorage.getItem(`btn${game_id}`)){
+                        btn.disabled = true
+                        btn.innerText = "liked!"
+                    }
+                }
+
+                async function fetchlikes() {
+                    const {data, error} = await db.from("game_likes").select("game_id, like_count")
+
+                    if (!error && data){
+                        data.forEach(project => {
+                            const like_element = document.getElementById(`count-${project.game_id}`);
+
+                            console.log(project)
+                            if (like_element){
+                                like_element.innerText = project.like_count
+                            }
+                        })
+                    } else {
+                        const buttons = document.querySelectorAll(".ProjectLikeButton")
+                        buttons.forEach(button => {
+                            const game_id = button.getAttribute("data-id")
+                            const counter_element = document.getElementById(`count-${game_id}`)
+
+                            if (counter_element){
+                                button.style.display = "none"; 
+                                button.disabled = true
+                                counter_element.innerText = "Couldn't reach database :("
+                                counter_element.style = "left: 75%; top: 85%; font-size: 1.25vw;;"
+                            }
+                        })
+                    }
+                }
+
+                async function updatelikes(event) {
+                    const button = event.target
+                    const game_id = button.getAttribute('data-id')
+                    const counter_element = document.getElementById(`count-${game_id}`)
+
+                    button.disabled = true
+
+                    let currentlikes = parseInt(counter_element.innerText)
+                    let newlikes = currentlikes + 1;
+
+                    console.log(game_id, counter_element)
+
+                    const {error} = await db.from("game_likes").update({like_count : newlikes}).eq("game_id", game_id)
+
+                    console.log(error)
+
+                    if (!error){
+                        localStorage.setItem(`btn${game_id}`, true)
+                        button.innerText = "liked!"
+                        counter_element.innerText = newlikes
+                    } else {
+                        console.error("couldn't like")
+                        button.disabled = false
+                    }
+                }
+
+                const buttons = document.querySelectorAll('.ProjectLikeButton').forEach(button => {
+                    onpageload(button)
+                    button.addEventListener('click', updatelikes)
+                })
+
+                fetchlikes()
+            </script>
+
+            <script>
+                const secretbutton = document.getElementById("secret-button")
+                const audio = new Audio('./sfx/secretsfx.mp3')
+                secretbutton.addEventListener("click", secret)
+
+                async function secret() {
+                    const bgdiv = document.getElementById("main_bg")
+                    bgdiv.classList.add("secretbgclass")
+                    audio.play()
+                    secretbutton.disabled = true
+                }
+                 
+            </script>
+        </div>
+    </body>
+</html>
+
+<link rel="stylesheet" href="css/style.css">

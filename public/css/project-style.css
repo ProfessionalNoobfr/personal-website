@@ -1,0 +1,126 @@
+body {
+    background-image: linear-gradient( rgb(21, 2, 2), rgb(56, 54, 54));
+    scroll-behavior: smooth;
+}
+
+div {
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    opacity: 0;
+    transform: translateY(-30px);
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: none;
+}
+
+.title {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 100px;
+    padding-left: 2%;
+    padding-top: 5%;
+    margin: 0%;
+}
+.url{
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 35px;
+    padding-left: 2.5%;
+    margin: 0%;
+    text-decoration: none;
+    opacity: 0.75;
+}
+
+.description {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 28px;
+    padding-left: 2.5%;
+    padding-top: 1.5%;
+    margin: 0%;
+}
+
+.date {
+    display:inline-flex;
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 18px;
+    padding-left: 2.5%;
+    padding-top: 1.5%;
+    opacity: 0.6;
+    text-decoration: underline;
+    margin: 0%;
+}
+
+.status {
+    display:inline-flex;
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 18px;
+    padding-left: 2.5%;
+    padding-top: 1.5%;
+    opacity: 0.6;
+    text-decoration: underline;
+    margin: 0%;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+
+    width: 99.25vw;
+    height: 80px;
+    margin: 0%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    z-index: 1;
+}
+
+.navbartitle {
+    display: flex;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 35px;
+    color: white;
+    padding-left: 2.5vw;
+    margin: 0%;
+    transition: all, 0.25s ease-in-out; 
+}
+
+.navbar > ul {
+    display: flex;
+    list-style: none;
+    padding-right: 2.5vw;
+    gap: 60px;
+}
+
+.navbar > ul > a {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 25px;
+    height: 100%;
+    color: white;
+    transition: all, 0.25s ease-in-out;
+}
+
+.navbar > ul > a:hover{
+    color: rgb(237, 95, 18);
+    transform: translateY(-6px);
+}
+
+.fade-in{
+    opacity: 1;
+    transform: translateY(0px);
+
+    transition: opacity 1s ease-in-out, transform 2s ease-in-out;
+}
+
+.fade-out{
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+}

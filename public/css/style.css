@@ -1,0 +1,370 @@
+h1 {
+    color: rgb(255, 255, 255);
+    font-family: monospace;
+    font-size: 100px;
+    padding-left: 2%;
+    padding-top: 5%;
+    margin: 0%;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+body {
+    background-image: linear-gradient( rgb(21, 2, 2), rgb(56, 54, 54));
+    scroll-behavior: smooth;
+}
+
+.secretbgclass{
+    background-image: url("../img/titlecardbackground.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.secretbgclassbutton{
+    display: flex;
+    justify-self: center;
+
+    position: relative;
+    top: 33%;
+    
+    text-align: center;
+    align-self: center;
+
+    opacity: 0.75;
+    transition: all, 0.25s ease-in-out; 
+}
+
+div {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-snap-type: none;
+}
+
+.sectionparagraph{
+    font-family: monospace;
+    font-size: 23px;
+    color: white;
+
+    padding: 0%;
+    margin-top: 1.5%;
+    margin-left: 2%;
+}
+
+.subheader{
+    color: rgb(199, 188, 188);
+    font-family: monospace;
+    font-size: 40px;
+    padding-left: 2%;
+    margin: 0%;
+}
+
+.bottom-bar{
+    justify-self: center;
+    position: relative;
+    top: 33%;
+    
+    width: 100vw;
+    height: .33vh;
+
+    opacity: 0.75;
+    background-color: white;
+    border-width: 0;
+    transition: all, 0.25s ease-in-out; 
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+
+    width: 99.25vw;
+    height: 80px;
+    margin: 0%;
+    align-items: center;
+    justify-content: space-between;
+    background-color: black;
+    z-index: 1;
+}
+
+.navbar > ul {
+    display: flex;
+    list-style: none;
+    padding-right: 2.5vw;
+    gap: 60px;
+}
+
+.navbartitle {
+    display: flex;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 35px;
+    color: white;
+    padding-left: 2.5vw;
+    margin: 0%;
+    transition: all, 0.25s ease-in-out; 
+}
+
+.navbar > ul > a {
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 25px;
+    height: 100%;
+    color: white;
+    transition: all, 0.25s ease-in-out;
+}
+
+.navbar > ul > a:hover{
+    color: rgb(237, 95, 18);
+    transform: translateY(-6px);
+}
+
+#projects {
+    display: flex;
+    flex-direction: column;
+    padding-top: 50px;
+    width: 100%;
+    height: fit-content;
+
+    overflow-x: hidden;
+}
+
+.projectlist{
+    display:flex;
+    flex-direction: column;
+
+    width: 85%;
+    
+    padding-left: 2.5%;
+    padding-top: 2.5%;
+    gap: 15px;
+}
+
+.projectbox {
+    position: relative;
+    width: 90vw;
+    height: 37.5vh;
+
+    box-shadow: black 0px 0px 20px ;
+
+    padding-left: 1%;
+    padding-top: 3%;
+    margin: 0%;
+
+    background-image: linear-gradient(45deg, rgb(37, 36, 36), rgb(20, 19, 19));
+    border: rgba(125, 125, 125, 0.25) solid 1px;
+    border-radius: 10px;
+
+    opacity: 0;
+    transform: translate(-150px, -50px);
+
+    transition: all 0.25s ease-in-out;
+}
+
+.projectbox:hover{
+    border-color: rgb(255,255,255)
+}
+
+.projectbox > span{
+    padding-top: 0%;
+    margin: 0%;
+}
+
+.ProjectHeader{
+    font-family: monospace;
+    font-size: 50px;
+    padding-top: 0%;
+    margin: 0%;
+    color: white;
+    -webkit-text-stroke: rgba(255, 255, 255, 0);
+}
+
+.ProjectSubHeader{
+    font-family: monospace;
+
+    font-size: 25px;
+    padding-top: 0%;
+    padding-left: 2%;
+
+    margin: 0%;
+
+    color: rgba(255, 255, 255, 0.511);
+    -webkit-text-stroke: rgba(255, 255, 255, 0);
+}
+
+.ProjectButton{
+    display: flex;
+    position: absolute;
+
+    background-color: orangered;
+    border: none;
+    border-radius: 20px;
+
+    width: 168px;
+    height: 43px;
+
+    left: 1.75%;
+    top: 80%;
+
+    margin: 0;
+
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: 20px;
+    text-decoration: none;
+
+    align-items: center;
+    justify-content: center;
+
+    transition: all 0.35s ease-in-out;
+}
+
+.ProjectButton:hover{
+    width: 166px;
+    height: 41px;
+    background-color: rgb(185, 49, 0);
+}
+
+.ProjectLikeButton{
+    position: absolute;
+
+    background-color: orangered;
+    border: none;
+    border-radius: 20px;
+
+    width: 110px;
+    height: 43px;
+
+    margin-left: 1.75%;
+
+    left: 87%;
+    top: 80%;
+
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: 24.5px;
+    text-decoration: none;
+
+    transition: all 0.35s ease-in-out;
+}
+
+.ProjectLikeCounter{
+    position: absolute;
+
+    left: 86%;
+    top: 82%;
+
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    font-size: 1.75vw;
+    text-decoration: none;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+
+    margin: 0;
+}
+
+.titlecardbody {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+.titlecardheader{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1%;
+    text-shadow: black 0px 0px 50px;
+}
+.titlecardsubheader{
+    display: flex;
+    justify-content: center;
+    color: rgb(199, 188, 188);
+    font-family: monospace;
+    font-size: 40px;
+    padding-left: 2%;
+    margin: 0%;
+}
+
+.titlecardscroller{
+    display: flex;
+    position: relative;
+    font-family: monospace;
+    font-size: 20px;
+    margin: 0%;
+    color: white;
+    justify-content: center;
+    top: 51vh;
+    opacity: 0.35;
+    animation: titlecardscrollanimation 5s ease-in-out infinite;
+}
+
+.invisible{
+    opacity: 0;
+}
+
+
+.fade-in{
+    opacity: 1;
+    transform: translateY(0px);
+
+    transition: opacity .5s ease-in-out, transform 1s ease-in-out;
+}
+
+.fade-in-box{
+    opacity: 1;
+    transform: translate(0px, 0px);
+
+    transition: border-color 0.25s ease-in-out, opacity 0.5s ease-in-out, transform 1.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fade-out-box{
+    opacity: 0;
+    transform: translate(-150px, 00px);
+
+    transition: border-color 0.25s ease-in-out, opacity 0.5s ease-in-out, transform 1.75s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.fade-out{
+    opacity: 0;
+    transform: translateY(20px);
+
+    transition: opacity .2s ease-in-out, transform .2s ease-in-out;
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+}
+
+::-webkit-scrollbar-track {
+    background: #53535373;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cfcccc93;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #666666;
+}
+
+@keyframes titlecardscrollanimation {
+    0% {
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(20px);  
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
